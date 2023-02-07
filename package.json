@@ -1,12 +1,12 @@
 {
-  "name": "eslint-config-skira",
+  "name": "eslint-config-improvin",
   "version": "0.1.0",
-  "description": "Eslint config used at Skira",
+  "description": "Eslint config used at Improvin",
   "main": "index.js",
   "scripts": {
     "test": "N/A"
   },
-  "author": "Skira AB",
+  "author": "Improvin AB",
   "license": "MIT",
   "peerDependencies": {
     "eslint": ">= 7",
@@ -20,6 +20,6 @@
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.20.6",
     "eslint-plugin-react-hooks": "4.0.8",
-    "eslint-plugin-skira": "https://github.com/plantaseed/eslint-plugin-skira.git#v0.1.0"
+    "eslint-plugin-improvin": "https://github.com/improvin/eslint-plugin-improvin.git#v0.1.0"
   }
 }

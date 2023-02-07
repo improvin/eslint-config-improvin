@@ -5,7 +5,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/react',
   ],
-  plugins: ['skira'],
+  plugins: ['improvin'],
   rules: {
     // Disable
 
@@ -95,7 +95,7 @@ module.exports = {
       },
     ],
 
-    // Skira
-    'skira/sql-matching-double-quotes': 'warn',
+    // Improvin
+    'improvin/sql-matching-double-quotes': 'warn',
   },
 };
