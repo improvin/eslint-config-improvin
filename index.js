@@ -1,10 +1,5 @@
 module.exports = {
-  extends: [
-    'airbnb',
-    'airbnb/hooks',
-    'plugin:prettier/recommended',
-    'prettier/react',
-  ],
+  extends: ['airbnb', 'airbnb/hooks', 'plugin:prettier/recommended'],
   plugins: ['improvin'],
   rules: {
     // Disable
@@ -23,6 +18,13 @@ module.exports = {
     'react/jsx-wrap-multilines': 'off',
     'react/forbid-prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
 
     // Import
     'import/prefer-default-export': 'off',
