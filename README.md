@@ -1,10 +1,10 @@
-# eslint-config-skira
+# eslint-config-improvin
 
-## Welcome to Skira's eslint config
+## Welcome to Improvin's eslint config
 
 ### Install command
 
-`yarn add --dev https://github.com/plantaseed/eslint-config-skira.git`
+`yarn add --dev https://github.com/improvin/eslint-config-improvin.git`
 
 ### Install peer dependencioes
 
