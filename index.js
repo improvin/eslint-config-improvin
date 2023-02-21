@@ -60,6 +60,7 @@ module.exports = {
       'error',
       { varsIgnorePattern: 'debug', ignoreRestSiblings: true },
     ],
+    'max-params': ['error', 3],
     'max-len': [
       'warn',
       {
