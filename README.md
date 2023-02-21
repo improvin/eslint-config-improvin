@@ -14,7 +14,7 @@
 
 ```
 {
-  "extends": "skira"
+  "extends": "eslint-config-improvin"
 }
 ```
 
