@@ -21,6 +21,6 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
-    "eslint-plugin-improvin": "https://github.com/improvin/eslint-plugin-improvin.git#v0.1.1"
+    "eslint-plugin-improvin": "https://github.com/improvin/eslint-plugin-improvin.git#v0.1.2"
   }
 }
