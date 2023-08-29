@@ -1,0 +1,30 @@
+{
+  "folders": [{ "path": "../" }],
+  "settings": {
+    // JS
+    "eslint.workingDirectories": [
+      "pumbaa/",
+      "naboo/",
+      "eve/",
+      "batuu/",
+      "the-senate/"
+    ],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "prettier.configPath": "./eslint-config-improvin/.prettierrc",
+    "prettier.requireConfig": true,
+    "files.exclude": {
+      "**/.nyc_output": true,
+      "**/coverage": true,
+      "**/logs": true
+    },
+    "editor.quickSuggestions": {
+      "comments": true,
+      "strings": true
+    },
+    "emmet.showExpandedAbbreviation": "never"
+  }
+}
