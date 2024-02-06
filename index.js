@@ -1,5 +1,11 @@
 module.exports = {
-  extends: ['airbnb', 'airbnb/hooks', 'plugin:prettier/recommended'],
+  extends: [
+    'airbnb',
+    'airbnb/hooks',
+    'plugin:prettier/recommended',
+    'airbnb-typescript',
+  ],
+  parser: '@typescript-eslint/parser',
   plugins: ['improvin'],
   rules: {
     // Disable
@@ -95,6 +101,34 @@ module.exports = {
           order: 'asc',
           caseInsensitive: true,
         },
+      },
+    ],
+
+    // disable indentation warnings to prevent too many errors
+    // our indentation prefs do not match the typescript ones
+    '@typescript-eslint/indent': 'off',
+    indent: 'off',
+
+    // defer to typescript for quotes
+    // to avoid checking duplicate rules
+    quotes: 'off',
+    // allow template literals in quotes
+    '@typescript-eslint/quotes': [
+      'error',
+      'single',
+      { allowTemplateLiterals: true },
+    ],
+
+    // allow extraneous dependencies in test files
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/*.test.js',
+          '**/*.test.jsx',
+          '**/*.test.ts',
+          '**/*.test.tsx',
+        ],
       },
     ],
 
