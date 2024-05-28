@@ -101,7 +101,7 @@ module.exports = {
     // Improvin
     'improvin/sql-matching-double-quotes': 'warn',
 
-    // Allow for the use of leading underscores for unused variables.
+    // Allow unused variables if they have a leading underscore.
     'no-unused-vars': [
       'error',
       { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
