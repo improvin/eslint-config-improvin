@@ -184,5 +184,24 @@ module.exports = {
           'Inline exports are not allowed. Export separately at the end of the file.',
       },
     ],
+
+    // Prefer `type` over `interface`, except for defining types for classes
+    // `type` is more expressive because it can be used for primitives, unions, intersections, etc.,
+    // while `interface` can only be used for object types and is less flexible for code that rarely uses classes.
+    '@typescript-eslint/consistent-type-definitions': [
+      'warning',
+      {
+        preference: 'type', // Enforce using `type` over `interface`
+      },
+    ],
+
+    // Allow interfaces that extend other interfaces (useful for class types).
+    // These are mostly used in our system for Sequelize type definitions (coming soon...).
+    '@typescript-eslint/no-empty-interface': [
+      'error',
+      {
+        allowSingleExtends: true, // Allow interfaces that extend other interfaces (useful for class types)
+      },
+    ],
   },
 };
