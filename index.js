@@ -195,12 +195,10 @@ module.exports = {
       },
     ],
 
-    // Allow interfaces that extend other interfaces (useful for class types).
-    // These are mostly used in our system for Sequelize type definitions (coming soon...).
-    '@typescript-eslint/no-empty-interface': [
+    '@typescript-eslint/no-empty-object-type': [
       'error',
       {
-        allowSingleExtends: true, // Allow interfaces that extend other interfaces (useful for class types)
+        allowSingleExtends: true, // Allow types that extend other types
       },
     ],
   },
