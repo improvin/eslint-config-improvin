@@ -15,7 +15,7 @@
   "dependencies": {
     "eslint": "8.57.1",
     "eslint-config-airbnb": "18.2.1",
-    "eslint-config-prettier": "8.6.0",
+    "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-improvin": "https://github.com/improvin/eslint-plugin-improvin.git#v0.1.2",
     "eslint-plugin-jsx-a11y": "6.10.2",
