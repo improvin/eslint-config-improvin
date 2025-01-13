@@ -135,5 +135,71 @@ module.exports = {
         leadingUnderscore: 'allow',
       },
     ],
+
+    // Disallow function declarations; prefer 'const' with arrow functions;
+    // i.e. `() => {}` instead of `function() {}`.
+    'no-restricted-syntax': [
+      'warning',
+      {
+        selector: 'FunctionDeclaration',
+        message:
+          'Use `const` with arrow functions instead of `function` declarations.',
+      },
+    ],
+    '@typescript-eslint/prefer-function-type': 'warning',
+    'func-names': ['warning', 'never'],
+
+    // Prefers arrow functions over function declarations in callbacks,
+    // i.e. `onClick={() => {}}` instead of `onClick={function() {}}`.
+    // Disallows named functions if they are not bound to `this`.
+    'prefer-arrow-callback': [
+      'warning',
+      {
+        allowNamedFunctions: false,
+        allowUnboundThis: false,
+      },
+    ],
+
+    // Disallow inline exports; prefer exporting at the end of the file.
+    // i.e. disallow `export const foo = () => {}` in the middle of the file,
+    // Prefer `const foo = () => {}; export { foo };`
+    // or `const foo = () => {}; export default foo;` at the end of the file.
+    'no-restricted-syntax': [
+      'warning',
+      {
+        selector:
+          'ExportNamedDeclaration[declaration.type="VariableDeclaration"]',
+        message:
+          'Inline exports are not allowed. Export separately at the end of the file.',
+      },
+      {
+        selector:
+          'ExportNamedDeclaration[declaration.type="FunctionDeclaration"]',
+        message:
+          'Inline exports are not allowed. Export separately at the end of the file.',
+      },
+      {
+        selector: 'ExportNamedDeclaration[declaration.type="ClassDeclaration"]',
+        message:
+          'Inline exports are not allowed. Export separately at the end of the file.',
+      },
+    ],
+
+    // Prefer `type` over `interface`, except for defining types for classes
+    // `type` is more expressive because it can be used for primitives, unions, intersections, etc.,
+    // while `interface` can only be used for object types and is less flexible for code that rarely uses classes.
+    '@typescript-eslint/consistent-type-definitions': [
+      'warning',
+      {
+        preference: 'type', // Enforce using `type` over `interface`
+      },
+    ],
+
+    '@typescript-eslint/no-empty-object-type': [
+      'error',
+      {
+        allowSingleExtends: true, // Allow types that extend other types
+      },
+    ],
   },
 };
