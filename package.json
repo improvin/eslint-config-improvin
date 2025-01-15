@@ -13,7 +13,7 @@
     "prettier": ">= 3"
   },
   "dependencies": {
-    "eslint": "9",
+    "eslint": "9.18.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "10.0.1",
     "eslint-plugin-import": "2.25.3",
