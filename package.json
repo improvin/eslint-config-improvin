@@ -16,23 +16,23 @@
   "author": "Improvin AB",
   "license": "MIT",
   "peerDependencies": {
-    "eslint": ">= 8",
+    "eslint": ">= 9",
     "prettier": ">= 3",
     "typescript": ">=5.0.0"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
-    "eslint": "9.20.0",
-    "eslint-config-airbnb": "18.2.1",
+    "eslint": "^9.0.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
-    "eslint-config-prettier": "10.0.1",
-    "eslint-plugin-import": "2.25.3",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-improvin": "https://github.com/improvin/eslint-plugin-improvin.git#v0.1.2",
-    "eslint-plugin-jsx-a11y": "6.10.2",
-    "eslint-plugin-prettier": "5.2.1",
-    "eslint-plugin-react": "7.37.4",
-    "eslint-plugin-react-hooks": "4.6.2"
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.2"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
