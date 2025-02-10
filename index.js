@@ -143,7 +143,7 @@ module.exports = {
     // i.e. `onClick={() => {}}` instead of `onClick={function() {}}`.
     // Disallows named functions if they are not bound to `this`.
     'prefer-arrow-callback': [
-      1,
+      'warn',
       {
         allowNamedFunctions: false,
         allowUnboundThis: false,
@@ -151,7 +151,7 @@ module.exports = {
     ],
 
     'no-restricted-syntax': [
-      1,
+      'warn',
       // Disallow function declarations; prefer 'const' with arrow functions;
       // i.e. `() => {}` instead of `function() {}`.
       {
@@ -193,7 +193,7 @@ module.exports = {
     ],
 
     '@typescript-eslint/no-empty-object-type': [
-      'error',
+      2,
       {
         allowSingleExtends: true, // Allow types that extend other types
       },
