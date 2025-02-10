@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./index.cjs",
   "module": "./index.js",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./index.js",
@@ -14,7 +15,8 @@
   "files": [
     "index.js",
     "index.cjs",
-    "base-config.cjs"
+    "base-config.cjs",
+    "index.d.ts"
   ],
   "scripts": {
     "lint": "eslint ."
@@ -37,5 +39,8 @@
     "@eslint/js": "^9.0.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-import-resolver-typescript": "^3.6.1"
+  },
+  "devDependencies": {
+    "eslint": "9.20.0"
   }
 }
