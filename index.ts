@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   extends: ['airbnb', 'airbnb/hooks', 'plugin:prettier/recommended'],
   plugins: ['improvin'],
   rules: {
@@ -187,9 +187,7 @@ module.exports = {
     // while `interface` can only be used for object types and is less flexible for code that rarely uses classes.
     '@typescript-eslint/consistent-type-definitions': [
       1,
-      {
-        preference: 'type', // Enforce using `type` over `interface`
-      },
+      'type', // Enforce using `type` over `interface`
     ],
 
     '@typescript-eslint/no-empty-object-type': [

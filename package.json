@@ -2,19 +2,30 @@
   "name": "eslint-config-improvin",
   "version": "0.1.0",
   "description": "Eslint config used at Improvin",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "commonjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsc",
+    "lint": "eslint .",
     "test": "N/A"
   },
   "author": "Improvin AB",
   "license": "MIT",
   "peerDependencies": {
     "eslint": ">= 8",
-    "prettier": ">= 3"
+    "prettier": ">= 3",
+    "typescript": ">=5.0.0"
   },
   "dependencies": {
-    "eslint": "8.57.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "eslint": "9.20.0",
     "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "10.0.1",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-improvin": "https://github.com/improvin/eslint-plugin-improvin.git#v0.1.2",
@@ -22,5 +33,8 @@
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-hooks": "4.6.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
 }
