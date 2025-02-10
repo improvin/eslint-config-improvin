@@ -24,14 +24,7 @@
   "author": "Improvin AB",
   "license": "MIT",
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">=7",
-    "@typescript-eslint/parser": ">=7",
     "eslint": ">=9",
-    "eslint-plugin-import": ">=2",
-    "eslint-plugin-improvin": ">=0.1",
-    "eslint-plugin-prettier": ">=5",
-    "eslint-plugin-react": ">=7",
-    "eslint-plugin-react-hooks": ">=4",
     "prettier": ">=3",
     "typescript": ">=5"
   },
@@ -41,6 +34,13 @@
     "eslint-import-resolver-typescript": "^3.6.1"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=7",
+    "@typescript-eslint/parser": ">=7",
+    "eslint-plugin-import": ">=2",
+    "eslint-plugin-improvin": ">=0.1",
+    "eslint-plugin-prettier": ">=5",
+    "eslint-plugin-react": ">=7",
+    "eslint-plugin-react-hooks": ">=4",
     "eslint": "9.20.0"
   }
 }
