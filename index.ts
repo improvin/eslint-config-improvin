@@ -56,10 +56,6 @@ export default {
         ],
       },
     ],
-    'no-unused-vars': [
-      'error',
-      { varsIgnorePattern: 'debug', ignoreRestSiblings: true },
-    ],
     'max-params': ['error', 3],
     'max-len': [
       'warn',
@@ -101,10 +97,15 @@ export default {
     // Improvin
     'improvin/sql-matching-double-quotes': 'warn',
 
-    // Allow unused variables if they have a leading underscore.
+    // Allow unused variables if they have a leading underscore
+    // or if they are debug variables.
     'no-unused-vars': [
       'error',
-      { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
+      {
+        varsIgnorePattern: '^_|debug',
+        argsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+      },
     ],
     '@typescript-eslint/no-unused-vars': [
       'error',
