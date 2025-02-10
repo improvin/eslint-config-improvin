@@ -136,14 +136,14 @@ module.exports = {
       },
     ],
 
-    '@typescript-eslint/prefer-function-type': 'warning',
-    'func-names': ['warning', 'never'],
+    '@typescript-eslint/prefer-function-type': 1,
+    'func-names': [1, 'never'],
 
     // Prefers arrow functions over function declarations in callbacks,
     // i.e. `onClick={() => {}}` instead of `onClick={function() {}}`.
     // Disallows named functions if they are not bound to `this`.
     'prefer-arrow-callback': [
-      'warning',
+      1,
       {
         allowNamedFunctions: false,
         allowUnboundThis: false,
@@ -151,7 +151,7 @@ module.exports = {
     ],
 
     'no-restricted-syntax': [
-      'warning',
+      1,
       // Disallow function declarations; prefer 'const' with arrow functions;
       // i.e. `() => {}` instead of `function() {}`.
       {
@@ -186,7 +186,7 @@ module.exports = {
     // `type` is more expressive because it can be used for primitives, unions, intersections, etc.,
     // while `interface` can only be used for object types and is less flexible for code that rarely uses classes.
     '@typescript-eslint/consistent-type-definitions': [
-      'warning',
+      1,
       {
         preference: 'type', // Enforce using `type` over `interface`
       },
