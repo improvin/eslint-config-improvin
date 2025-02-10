@@ -136,16 +136,6 @@ module.exports = {
       },
     ],
 
-    // Disallow function declarations; prefer 'const' with arrow functions;
-    // i.e. `() => {}` instead of `function() {}`.
-    'no-restricted-syntax': [
-      'warning',
-      {
-        selector: 'FunctionDeclaration',
-        message:
-          'Use `const` with arrow functions instead of `function` declarations.',
-      },
-    ],
     '@typescript-eslint/prefer-function-type': 'warning',
     'func-names': ['warning', 'never'],
 
@@ -160,12 +150,19 @@ module.exports = {
       },
     ],
 
-    // Disallow inline exports; prefer exporting at the end of the file.
-    // i.e. disallow `export const foo = () => {}` in the middle of the file,
-    // Prefer `const foo = () => {}; export { foo };`
-    // or `const foo = () => {}; export default foo;` at the end of the file.
     'no-restricted-syntax': [
       'warning',
+      // Disallow function declarations; prefer 'const' with arrow functions;
+      // i.e. `() => {}` instead of `function() {}`.
+      {
+        selector: 'FunctionDeclaration',
+        message:
+          'Use `const` with arrow functions instead of `function` declarations.',
+      },
+      // Disallow inline exports; prefer exporting at the end of the file.
+      // i.e. disallow `export const foo = () => {}` in the middle of the file,
+      // Prefer `const foo = () => {}; export { foo };`
+      // or `const foo = () => {}; export default foo;` at the end of the file.
       {
         selector:
           'ExportNamedDeclaration[declaration.type="VariableDeclaration"]',
