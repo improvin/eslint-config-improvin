@@ -4,7 +4,7 @@
   "description": "Eslint config used at Improvin",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "commonjs",
+  "type": "module",
   "files": [
     "dist"
   ],
@@ -21,6 +21,9 @@
     "typescript": ">=5.0.0"
   },
   "dependencies": {
+    "@eslint/eslintrc": "^3.0.2",
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^20.11.24",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
     "eslint": "^9.0.0",
