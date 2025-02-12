@@ -7,6 +7,7 @@ const importPlugin = require('eslint-plugin-import');
 const improvinPlugin = require('eslint-plugin-improvin');
 const prettierPlugin = require('eslint-plugin-prettier');
 const prettierConfig = require('eslint-config-prettier');
+const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 
 module.exports = [
   js.configs.recommended,
@@ -20,6 +21,7 @@ module.exports = [
       import: importPlugin,
       improvin: improvinPlugin,
       prettier: prettierPlugin,
+      'jsx-a11y': jsxA11yPlugin,
     },
     languageOptions: {
       parser: tsParser,
@@ -27,6 +29,16 @@ module.exports = [
         ecmaVersion: 2023,
         sourceType: 'module',
         ecmaFeatures: { jsx: true },
+      },
+      globals: {
+        document: true,
+        window: true,
+        dataLayer: true,
+        google: true,
+        navigator: true,
+        crypto: true,
+        ResizeObserver: true,
+        KeyboardEvent: true,
       },
     },
     settings: {
@@ -43,8 +55,13 @@ module.exports = [
       'no-await-in-loop': 'off',
       'no-case-declarations': 'off',
       'import/prefer-default-export': 'off',
+      indent: 'off',
+      quotes: 'off',
 
       // React
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+      'react/require-default-props': 'off',
       'react/jsx-one-expression-per-line': 'off',
       'react/jsx-wrap-multilines': 'off',
       'react/forbid-prop-types': 'off',
@@ -60,10 +77,13 @@ module.exports = [
       'react-hooks/exhaustive-deps': 'warn',
 
       // TypeScript
+      '@typescript-eslint/indent': 'off',
       '@typescript-eslint/no-unused-vars': [
-        'error',
+        'warn',
         { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
       ],
+      '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+      '@typescript-eslint/no-empty-object-type': 'error',
       '@typescript-eslint/naming-convention': [
         'error',
         {
@@ -90,17 +110,16 @@ module.exports = [
         },
       ],
       '@typescript-eslint/prefer-function-type': 'warn',
-      '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
 
       // Import
       'import/no-extraneous-dependencies': [
         'error',
         {
           devDependencies: [
-            'config/*.js',
-            '**/*.spec.*',
-            '**/webpack.*.js',
-            '**/app/index.jsx',
+            '**/*.test.js',
+            '**/*.test.jsx',
+            '**/*.test.ts',
+            '**/*.test.tsx',
           ],
         },
       ],
@@ -111,14 +130,6 @@ module.exports = [
             ['builtin', 'external'],
             ['parent', 'internal', 'sibling', 'index'],
           ],
-          pathGroups: [
-            {
-              pattern: 'react*',
-              group: 'external',
-              position: 'before',
-            },
-          ],
-          pathGroupsExcludedImportTypes: ['react'],
           'newlines-between': 'always',
           alphabetize: {
             order: 'asc',
@@ -126,6 +137,38 @@ module.exports = [
           },
         },
       ],
+
+      // Improvin
+      'improvin/no-destructuring-process-env': 'error',
+
+      // JSX A11y
+      'jsx-a11y/alt-text': 'error',
+      'jsx-a11y/anchor-has-content': 'error',
+      'jsx-a11y/aria-props': 'error',
+      'jsx-a11y/aria-proptypes': 'error',
+      'jsx-a11y/aria-role': 'error',
+      'jsx-a11y/aria-unsupported-elements': 'error',
+      'jsx-a11y/click-events-have-key-events': 'error',
+      'jsx-a11y/heading-has-content': 'error',
+      'jsx-a11y/html-has-lang': 'error',
+      'jsx-a11y/iframe-has-title': 'error',
+      'jsx-a11y/img-redundant-alt': 'error',
+      'jsx-a11y/interactive-supports-focus': 'error',
+      'jsx-a11y/label-has-associated-control': 'error',
+      'jsx-a11y/media-has-caption': 'error',
+      'jsx-a11y/mouse-events-have-key-events': 'error',
+      'jsx-a11y/no-access-key': 'error',
+      'jsx-a11y/no-autofocus': 'error',
+      'jsx-a11y/no-distracting-elements': 'error',
+      'jsx-a11y/no-interactive-element-to-noninteractive-role': 'error',
+      'jsx-a11y/no-noninteractive-element-interactions': 'error',
+      'jsx-a11y/no-noninteractive-element-to-interactive-role': 'error',
+      'jsx-a11y/no-redundant-roles': 'error',
+      'jsx-a11y/no-static-element-interactions': 'error',
+      'jsx-a11y/role-has-required-aria-props': 'error',
+      'jsx-a11y/role-supports-aria-props': 'error',
+      'jsx-a11y/scope': 'error',
+      'jsx-a11y/tabindex-no-positive': 'error',
 
       // Prettier
       'prettier/prettier': [
