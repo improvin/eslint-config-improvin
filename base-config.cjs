@@ -57,24 +57,10 @@ const reactConfig = [
     settings: {
       react: { version: 'detect' },
     },
-  },
-  {
-    files: ['**/*.jsx'],
-    languageOptions: {
-      parser: require('@babel/eslint-parser'),
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          presets: ['@babel/preset-react'],
-        },
-      },
-    },
-  },
-  {
-    files: ['**/*.jsx', '**/*.tsx'],
     rules: {
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
+      'react/jsx-uses-vars': 'error',
     },
   },
 ];
