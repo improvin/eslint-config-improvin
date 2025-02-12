@@ -5,7 +5,6 @@ const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const importPlugin = require('eslint-plugin-import');
 const improvinPlugin = require('eslint-plugin-improvin');
-const prettierPlugin = require('eslint-plugin-prettier');
 const prettierConfig = require('eslint-config-prettier');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 
@@ -43,7 +42,7 @@ const rules = {
     },
     {
       selector: 'parameter',
-      format: ['camelCase'],
+      format: ['camelCase', 'PascalCase'],
       leadingUnderscore: 'allow',
     },
     {
@@ -80,17 +79,6 @@ const rules = {
         caseInsensitive: true,
       },
     },
-  ],
-
-  'prettier/prettier': [
-    'error',
-    {
-      printWidth: 80,
-      singleQuote: true,
-      arrowParens: 'avoid',
-      trailingComma: 'all',
-    },
-    { usePrettierrc: true },
   ],
 
   'max-params': ['error', 3],
@@ -189,11 +177,10 @@ const rules = {
 };
 
 const baseConfig = {
-  files: ['**/*.jsx', '**/*.tsx'],
+  files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
   plugins: {
     '@typescript-eslint': tsPlugin,
     import: importPlugin,
-    prettier: prettierPlugin,
     improvin: improvinPlugin,
     react: reactPlugin,
     'react-hooks': reactHooksPlugin,
