@@ -3,15 +3,10 @@ const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
-const importPlugin = require('eslint-plugin-import');
 const improvinPlugin = require('eslint-plugin-improvin');
-const prettierPlugin = require('eslint-plugin-prettier');
-const prettierConfig = require('eslint-config-prettier');
-const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 
-module.exports = [
+const commonConfig = [
   js.configs.recommended,
-  prettierConfig,
   {
     files: ['**/*.ts', '**/*.tsx'],
     plugins: {
@@ -19,6 +14,9 @@ module.exports = [
     },
     languageOptions: {
       parser: tsParser,
+      parserOptions: {
+        sourceType: 'module',
+      },
     },
     rules: {
       'no-unused-vars': 'off',
@@ -26,32 +24,77 @@ module.exports = [
     },
   },
   {
-    files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
-    plugins: {
-      react: reactPlugin,
-      'react-hooks': reactHooksPlugin,
-      import: importPlugin,
-      improvin: improvinPlugin,
-      prettier: prettierPlugin,
-      'jsx-a11y': jsxA11yPlugin,
+    files: ['**/*.js'],
+    languageOptions: {
+      ecmaVersion: 2023,
+      sourceType: 'module',
     },
-    settings: {
-      react: { version: 'detect' },
-      'import/resolver': { 
-        node: true,
-        typescript: {
-          alwaysTryTypes: false // Speed up import resolution
-        }
-      },
+  },
+  {
+    files: ['**/*.js', '**/*.ts'],
+    plugins: {
+      improvin: improvinPlugin,
     },
     rules: {
-      // Keep only essential rules that catch real problems
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
-      'import/no-unresolved': 'error',
-      'import/named': 'error',
-      'prettier/prettier': 'error',
       'improvin/no-destructuring-process-env': 'error',
     },
   },
 ];
+
+const reactConfig = [
+  ...commonConfig,
+  {
+    files: ['**/*.jsx', '**/*.tsx'],
+    plugins: {
+      react: reactPlugin,
+      'react-hooks': reactHooksPlugin,
+    },
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
+    },
+    settings: {
+      react: { version: 'detect' },
+    },
+  },
+  {
+    files: ['**/*.jsx'],
+    languageOptions: {
+      parser: require('@babel/eslint-parser'),
+      parserOptions: {
+        requireConfigFile: false,
+        babelOptions: {
+          presets: ['@babel/preset-react'],
+        },
+      },
+    },
+  },
+  {
+    files: ['**/*.jsx', '**/*.tsx'],
+    rules: {
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+    },
+  },
+];
+
+const nodeConfig = [
+  ...commonConfig,
+  {
+    files: ['**/*.js', '**/*.ts'],
+    env: {
+      node: true,
+    },
+    rules: {
+      'no-process-exit': 'error',
+      'no-console': 'off',
+    },
+  },
+];
+
+module.exports = {
+  commonConfig,
+  reactConfig,
+  nodeConfig,
+};

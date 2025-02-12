@@ -2,16 +2,18 @@
   "name": "eslint-config-improvin",
   "version": "0.1.0",
   "description": "ESLint config used at Improvin",
-  "type": "module",
-  "main": "./base-config.cjs",
-  "module": "./index.js",
+  "main": "./index.cjs",
+  "module": "./index.mjs",
   "types": "./index.d.ts",
   "exports": {
-    ".": "./base-config.cjs"
+    "types": "./index.d.ts",
+    "require": "./index.cjs",
+    "import": "./index.mjs",
+    "default": "./index.mjs"
   },
   "files": [
     "base-config.cjs",
-    "index.js",
+    "index.mjs",
     "index.cjs",
     "index.d.ts"
   ],
@@ -39,6 +41,9 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@babel/core": "7.26.8",
+    "@babel/eslint-parser": "7.26.8",
+    "@babel/preset-react": "7.26.3",
     "eslint": "9.20.0"
   }
 }
