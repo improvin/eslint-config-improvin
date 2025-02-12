@@ -1,13 +1,9 @@
 import type { Linter } from 'eslint';
 
 declare const baseConfig: {
-  commonConfig: Linter.FlatConfig[];
-  reactConfig: Linter.FlatConfig[];
-  nodeConfig: Linter.FlatConfig[];
+  reactConfig: Linter.Config[];
+  nodeConfig: Linter.Config[];
 };
 
-export const commonConfig: Linter.FlatConfig[];
-export const reactConfig: Linter.FlatConfig[];
-export const nodeConfig: Linter.FlatConfig[];
-
-export default baseConfig;
+export const reactConfig: Linter.Config[];
+export const nodeConfig: Linter.Config[];

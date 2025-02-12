@@ -1,9 +1,4 @@
-const baseConfig = require('./base-config.cjs');
+const nodeConfig = require('./src/node.config.cjs');
+const reactConfig = require('./src/react.config.cjs');
 
-const { commonConfig, reactConfig, nodeConfig } = baseConfig;
-
-module.exports = {
-  commonConfig,
-  reactConfig,
-  nodeConfig,
-};
+module.exports = { reactConfig, nodeConfig };

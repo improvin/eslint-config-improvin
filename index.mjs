@@ -1,8 +1,7 @@
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
-const baseConfig = require('./base-config.cjs');
 
-const { commonConfig, reactConfig, nodeConfig } = baseConfig;
+const nodeConfig = require('./src/node.config.cjs');
+const reactConfig = require('./src/react.config.cjs');
 
-export { commonConfig, reactConfig, nodeConfig };
-export default baseConfig;
+export { reactConfig, nodeConfig };
