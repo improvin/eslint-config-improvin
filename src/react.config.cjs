@@ -85,12 +85,12 @@ const rules = {
   'prettier/prettier': [
     'error',
     {
-      singleQuote: true,
       printWidth: 80,
+      singleQuote: true,
       arrowParens: 'avoid',
       trailingComma: 'all',
     },
-    { usePrettierrc: false },
+    { usePrettierrc: true },
   ],
 
   'max-params': ['error', 3],
