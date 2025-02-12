@@ -13,6 +13,13 @@ module.exports = [
   js.configs.recommended,
   prettierConfig,
   {
+    files: ['**/*.ts', '**/*.tsx'],
+    rules: {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
+  {
     files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
     plugins: {
       '@typescript-eslint': tsPlugin,
@@ -57,6 +64,7 @@ module.exports = [
       'import/prefer-default-export': 'off',
       indent: 'off',
       quotes: 'off',
+      'no-unused-vars': 'off',
 
       // React
       'react/react-in-jsx-scope': 'off',
@@ -80,7 +88,15 @@ module.exports = [
       '@typescript-eslint/indent': 'off',
       '@typescript-eslint/no-unused-vars': [
         'warn',
-        { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
+        {
+          vars: 'all',
+          args: 'none',
+          ignoreRestSiblings: true,
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrors: 'none',
+          destructuredArrayIgnorePattern: '^_',
+        },
       ],
       '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
       '@typescript-eslint/no-empty-object-type': 'error',

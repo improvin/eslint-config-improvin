@@ -3,19 +3,16 @@
   "version": "0.1.0",
   "description": "ESLint config used at Improvin",
   "type": "module",
-  "main": "./index.cjs",
+  "main": "./base-config.cjs",
   "module": "./index.js",
   "types": "./index.d.ts",
   "exports": {
-    ".": {
-      "import": "./index.js",
-      "require": "./index.cjs"
-    }
+    ".": "./base-config.cjs"
   },
   "files": [
+    "base-config.cjs",
     "index.js",
     "index.cjs",
-    "base-config.cjs",
     "index.d.ts"
   ],
   "scripts": {
@@ -24,33 +21,24 @@
   "author": "Improvin AB",
   "license": "MIT",
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">=7",
-    "@typescript-eslint/parser": ">=7",
-    "eslint": ">=9",
-    "eslint-plugin-import": ">=2",
-    "eslint-plugin-improvin": ">=0.1",
-    "eslint-plugin-prettier": ">=5",
-    "eslint-plugin-react": ">=7",
-    "eslint-plugin-react-hooks": ">=4",
-    "prettier": ">=3",
-    "typescript": ">=5",
-    "eslint-plugin-jsx-a11y": "^6.8.0"
+    "eslint": ">=9"
   },
   "dependencies": {
     "@eslint/js": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-import-resolver-typescript": "^3.6.1",
-    "typescript": "^5.7.3"
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-improvin": "git+https://github.com/improvin/eslint-plugin-improvin.git",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": ">=7",
-    "@typescript-eslint/parser": ">=7",
-    "eslint": "9.20.0",
-    "eslint-plugin-import": ">=2",
-    "eslint-plugin-improvin": "git+https://github.com/improvin/eslint-plugin-improvin.git",
-    "eslint-plugin-prettier": ">=5",
-    "eslint-plugin-react": ">=7",
-    "eslint-plugin-react-hooks": ">=4",
-    "prettier": "^3.5.0"
+    "eslint": "9.20.0"
   }
 }
