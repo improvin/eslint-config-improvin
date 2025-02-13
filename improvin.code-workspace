@@ -7,24 +7,22 @@
       "naboo/",
       "eve/",
       "batuu/",
-      "the-senate/"
+      "the-senate/",
     ],
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
-    "prettier.configPath": "./eslint-config-improvin/.prettierrc",
+    "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+    "prettier.configPath": "./eslint-config-improvin/.prettierrc.json",
     "prettier.requireConfig": true,
     "files.exclude": {
       "**/.nyc_output": true,
       "**/coverage": true,
-      "**/logs": true
+      "**/logs": true,
     },
     "editor.quickSuggestions": {
       "comments": true,
-      "strings": true
+      "strings": true,
     },
-    "emmet.showExpandedAbbreviation": "never"
-  }
+    "emmet.showExpandedAbbreviation": "never",
+  },
 }

@@ -3,14 +3,20 @@ const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 const importPlugin = require('eslint-plugin-import');
 const improvinPlugin = require('eslint-plugin-improvin');
-const prettierPlugin = require('eslint-plugin-prettier');
 const prettierConfig = require('eslint-config-prettier');
 
 const rules = {
   'no-unused-vars': 'off',
   '@typescript-eslint/no-unused-vars': [
     'warn',
-    { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
+    { 
+      varsIgnorePattern: '^_',
+      argsIgnorePattern: '^_',
+      vars: 'local',
+      args: 'none',
+      ignoreRestSiblings: true,
+      caughtErrors: 'none'
+    },
   ],
   'no-underscore-dangle': 'off',
   'no-plusplus': 'off',
@@ -24,30 +30,51 @@ const rules = {
 
   '@typescript-eslint/indent': 'off',
   '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
-  '@typescript-eslint/no-empty-object-type': 'error',
+  '@typescript-eslint/no-empty-object-type': 'warn',
   '@typescript-eslint/naming-convention': [
     'error',
     {
       selector: 'variable',
-      format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-      leadingUnderscore: 'allow',
+      format: null,
+      custom: {
+        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+|_[a-z][a-zA-Z0-9]*)$',
+        match: true
+      },
     },
     {
       selector: 'variable',
       modifiers: ['unused'],
-      format: ['camelCase'],
-      leadingUnderscore: 'allow',
+      format: null,
+      custom: {
+        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+|_[a-z][a-zA-Z0-9]*)$',
+        match: true
+      },
     },
     {
       selector: 'parameter',
-      format: ['camelCase'],
-      leadingUnderscore: 'allow',
+      format: null,
+      custom: {
+        regex: '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|_[a-z][a-zA-Z0-9]*)$',
+        match: true
+      },
     },
     {
       selector: 'memberLike',
       modifiers: ['private'],
-      format: ['camelCase'],
-      leadingUnderscore: 'allow',
+      format: null,
+      custom: {
+        regex: '^(_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*)$',
+        match: true
+      },
+    },
+    {
+      selector: 'memberLike',
+      modifiers: ['private', 'static'],
+      format: null,
+      custom: {
+        regex: '^(_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*)$',
+        match: true
+      },
     },
   ],
   '@typescript-eslint/prefer-function-type': 'warn',
@@ -72,17 +99,6 @@ const rules = {
         caseInsensitive: true,
       },
     },
-  ],
-
-  'prettier/prettier': [
-    'error',
-    {
-      singleQuote: true,
-      printWidth: 80,
-      arrowParens: 'avoid',
-      trailingComma: 'all',
-    },
-    { usePrettierrc: false },
   ],
 
   'max-params': ['error', 3],
@@ -138,7 +154,11 @@ const rules = {
 
 const baseConfig = {
   files: ['**/*.js', '**/*.ts'],
-  plugins: [tsPlugin, importPlugin, prettierPlugin, improvinPlugin],
+  plugins: {
+    '@typescript-eslint': tsPlugin,
+    import: importPlugin,
+    improvin: improvinPlugin,
+  },
   languageOptions: {
     parser: tsParser,
     parserOptions: {
@@ -152,6 +172,8 @@ const baseConfig = {
       __dirname: true,
       __filename: true,
       Buffer: true,
+      URL: true,
+      URLSearchParams: true,
       setTimeout: true,
       clearTimeout: true,
       setInterval: true,
