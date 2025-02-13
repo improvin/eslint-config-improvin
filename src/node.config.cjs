@@ -29,25 +29,37 @@ const rules = {
     'error',
     {
       selector: 'variable',
-      format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-      leadingUnderscore: 'allow',
+      format: null,
+      custom: {
+        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+)$',
+        match: true
+      },
     },
     {
       selector: 'variable',
       modifiers: ['unused'],
-      format: ['camelCase'],
-      leadingUnderscore: 'allow',
+      format: null,
+      custom: {
+        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+)$',
+        match: true
+      },
     },
     {
       selector: 'parameter',
-      format: ['camelCase'],
-      leadingUnderscore: 'allow',
+      format: null,
+      custom: {
+        regex: '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*)$',
+        match: true
+      },
     },
     {
       selector: 'memberLike',
       modifiers: ['private'],
-      format: ['camelCase'],
-      leadingUnderscore: 'allow',
+      format: null,
+      custom: {
+        regex: '^(_+|[a-z][a-zA-Z0-9]*)$',
+        match: true
+      },
     },
   ],
   '@typescript-eslint/prefer-function-type': 'warn',
