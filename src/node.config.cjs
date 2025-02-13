@@ -9,7 +9,14 @@ const rules = {
   'no-unused-vars': 'off',
   '@typescript-eslint/no-unused-vars': [
     'warn',
-    { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
+    { 
+      varsIgnorePattern: '^_',
+      argsIgnorePattern: '^_',
+      vars: 'local',
+      args: 'none',
+      ignoreRestSiblings: true,
+      caughtErrors: 'none'
+    },
   ],
   'no-underscore-dangle': 'off',
   'no-plusplus': 'off',
@@ -30,7 +37,7 @@ const rules = {
       selector: 'variable',
       format: null,
       custom: {
-        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+)$',
+        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+|_[a-z][a-zA-Z0-9]*)$',
         match: true
       },
     },
@@ -39,7 +46,7 @@ const rules = {
       modifiers: ['unused'],
       format: null,
       custom: {
-        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+)$',
+        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+|_[a-z][a-zA-Z0-9]*)$',
         match: true
       },
     },
@@ -47,7 +54,7 @@ const rules = {
       selector: 'parameter',
       format: null,
       custom: {
-        regex: '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*)$',
+        regex: '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|_[a-z][a-zA-Z0-9]*)$',
         match: true
       },
     },
@@ -56,7 +63,16 @@ const rules = {
       modifiers: ['private'],
       format: null,
       custom: {
-        regex: '^(_+|[a-z][a-zA-Z0-9]*)$',
+        regex: '^(_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*)$',
+        match: true
+      },
+    },
+    {
+      selector: 'memberLike',
+      modifiers: ['private', 'static'],
+      format: null,
+      custom: {
+        regex: '^(_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*)$',
         match: true
       },
     },
