@@ -50,7 +50,7 @@ const rules = {
       selector: 'parameter',
       format: null,
       custom: {
-        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*)$',
+        regex: '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*)$',
         match: true
       },
     },
