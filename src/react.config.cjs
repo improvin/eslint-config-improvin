@@ -26,7 +26,7 @@ const rules = {
 
   '@typescript-eslint/indent': 'off',
   '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
-  '@typescript-eslint/no-empty-object-type': 'error',
+  '@typescript-eslint/no-empty-object-type': 'warn',
   '@typescript-eslint/naming-convention': [
     'error',
     {

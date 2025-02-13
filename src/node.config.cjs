@@ -23,7 +23,7 @@ const rules = {
 
   '@typescript-eslint/indent': 'off',
   '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
-  '@typescript-eslint/no-empty-object-type': 'error',
+  '@typescript-eslint/no-empty-object-type': 'warn',
   '@typescript-eslint/naming-convention': [
     'error',
     {
@@ -156,6 +156,7 @@ const baseConfig = {
       __dirname: true,
       __filename: true,
       Buffer: true,
+      URL: true,
       setTimeout: true,
       clearTimeout: true,
       setInterval: true,
