@@ -157,6 +157,7 @@ const baseConfig = {
       __filename: true,
       Buffer: true,
       URL: true,
+      URLSearchParams: true,
       setTimeout: true,
       clearTimeout: true,
       setInterval: true,
