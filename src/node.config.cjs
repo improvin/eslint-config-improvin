@@ -138,7 +138,12 @@ const rules = {
 
 const baseConfig = {
   files: ['**/*.js', '**/*.ts'],
-  plugins: [tsPlugin, importPlugin, prettierPlugin, improvinPlugin],
+  plugins: {
+    '@typescript-eslint': tsPlugin,
+    import: importPlugin,
+    prettier: prettierPlugin,
+    improvin: improvinPlugin,
+  },
   languageOptions: {
     parser: tsParser,
     parserOptions: {
