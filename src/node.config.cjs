@@ -2,7 +2,6 @@ const js = require('@eslint/js');
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 const importPlugin = require('eslint-plugin-import');
-const improvinPlugin = require('eslint-plugin-improvin');
 const prettierConfig = require('eslint-config-prettier');
 
 const rules = {
@@ -194,7 +193,6 @@ const baseConfig = {
   plugins: {
     '@typescript-eslint': tsPlugin,
     import: importPlugin,
-    improvin: improvinPlugin,
   },
   languageOptions: {
     parser: tsParser,
