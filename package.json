@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-improvin",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "ESLint config used at Improvin",
   "main": "./index.cjs",
   "module": "./index.mjs",
