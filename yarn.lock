@@ -761,7 +761,8 @@ eslint-plugin-import@^2.31.0:
 
 "eslint-plugin-improvin@git+https://github.com/improvin/eslint-plugin-improvin.git":
   version "1.0.0"
-  resolved "git+https://github.com/improvin/eslint-plugin-improvin.git#7cdfdeaf3242e8505d649556dc2b803302996600"
+  uid "823b32c4f7d5ce7d207ee0730f6c8bddfda98271"
+  resolved "git+https://github.com/improvin/eslint-plugin-improvin.git#823b32c4f7d5ce7d207ee0730f6c8bddfda98271"
   dependencies:
     sql-formatter "2.3.3"
 
