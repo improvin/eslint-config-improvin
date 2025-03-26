@@ -34,7 +34,7 @@ const rules = {
       format: null,
       custom: {
         regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+)$',
-        match: true
+        match: true,
       },
     },
     {
@@ -43,15 +43,16 @@ const rules = {
       format: null,
       custom: {
         regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+)$',
-        match: true
+        match: true,
       },
     },
     {
       selector: 'parameter',
       format: null,
       custom: {
-        regex: '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*)$',
-        match: true
+        regex:
+          '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*)$',
+        match: true,
       },
     },
     {
@@ -60,7 +61,7 @@ const rules = {
       format: null,
       custom: {
         regex: '^(_+|[a-z][a-zA-Z0-9]*)$',
-        match: true
+        match: true,
       },
     },
   ],
@@ -136,6 +137,40 @@ const rules = {
       selector: 'ExportNamedDeclaration[declaration.type="ClassDeclaration"]',
       message:
         'Inline exports are not allowed. Export separately at the end of the file.',
+    },
+  ],
+
+  // New line between multi line blocks
+  'padding-line-between-statements': [
+    'error',
+    {
+      blankLine: 'always',
+      prev: [
+        'multiline-block-like',
+        'multiline-const',
+        'multiline-expression',
+        'multiline-let',
+        'multiline-var',
+        'block-like',
+      ],
+      next: '*',
+    },
+    {
+      blankLine: 'always',
+      prev: '*',
+      next: [
+        'multiline-block-like',
+        'multiline-const',
+        'multiline-expression',
+        'multiline-let',
+        'multiline-var',
+        'block-like',
+      ],
+    },
+    {
+      blankLine: 'any',
+      prev: ['cjs-import', 'import'],
+      next: ['cjs-import', 'import'],
     },
   ],
 

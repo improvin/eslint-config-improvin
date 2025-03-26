@@ -11,7 +11,9 @@
     ],
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+    },
     "prettier.configPath": "./eslint-config-improvin/.prettierrc.json",
     "prettier.requireConfig": true,
     "files.exclude": {
