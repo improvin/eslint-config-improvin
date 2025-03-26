@@ -4,7 +4,6 @@ const tsParser = require('@typescript-eslint/parser');
 const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const importPlugin = require('eslint-plugin-import');
-const improvinPlugin = require('eslint-plugin-improvin');
 const prettierConfig = require('eslint-config-prettier');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 
@@ -228,7 +227,6 @@ const baseConfig = {
   plugins: {
     '@typescript-eslint': tsPlugin,
     import: importPlugin,
-    improvin: improvinPlugin,
     react: reactPlugin,
     'react-hooks': reactHooksPlugin,
     'jsx-a11y': jsxA11yPlugin,
