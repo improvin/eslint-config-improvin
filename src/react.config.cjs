@@ -4,7 +4,6 @@ const tsParser = require('@typescript-eslint/parser');
 const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const importPlugin = require('eslint-plugin-import');
-const improvinPlugin = require('eslint-plugin-improvin');
 const prettierConfig = require('eslint-config-prettier');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 
@@ -34,7 +33,7 @@ const rules = {
       format: null,
       custom: {
         regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+)$',
-        match: true
+        match: true,
       },
     },
     {
@@ -43,15 +42,16 @@ const rules = {
       format: null,
       custom: {
         regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+)$',
-        match: true
+        match: true,
       },
     },
     {
       selector: 'parameter',
       format: null,
       custom: {
-        regex: '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*)$',
-        match: true
+        regex:
+          '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*)$',
+        match: true,
       },
     },
     {
@@ -60,7 +60,7 @@ const rules = {
       format: null,
       custom: {
         regex: '^(_+|[a-z][a-zA-Z0-9]*)$',
-        match: true
+        match: true,
       },
     },
   ],
@@ -139,6 +139,40 @@ const rules = {
     },
   ],
 
+  // New line between multi line blocks
+  'padding-line-between-statements': [
+    'error',
+    {
+      blankLine: 'always',
+      prev: [
+        'multiline-block-like',
+        'multiline-const',
+        'multiline-expression',
+        'multiline-let',
+        'multiline-var',
+        'block-like',
+      ],
+      next: '*',
+    },
+    {
+      blankLine: 'always',
+      prev: '*',
+      next: [
+        'multiline-block-like',
+        'multiline-const',
+        'multiline-expression',
+        'multiline-let',
+        'multiline-var',
+        'block-like',
+      ],
+    },
+    {
+      blankLine: 'any',
+      prev: ['cjs-import', 'import'],
+      next: ['cjs-import', 'import'],
+    },
+  ],
+
   // React specific rules
   'react/react-in-jsx-scope': 'off',
   'react/prop-types': 'off',
@@ -193,7 +227,6 @@ const baseConfig = {
   plugins: {
     '@typescript-eslint': tsPlugin,
     import: importPlugin,
-    improvin: improvinPlugin,
     react: reactPlugin,
     'react-hooks': reactHooksPlugin,
     'jsx-a11y': jsxA11yPlugin,

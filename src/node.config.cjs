@@ -2,20 +2,19 @@ const js = require('@eslint/js');
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 const importPlugin = require('eslint-plugin-import');
-const improvinPlugin = require('eslint-plugin-improvin');
 const prettierConfig = require('eslint-config-prettier');
 
 const rules = {
   'no-unused-vars': 'off',
   '@typescript-eslint/no-unused-vars': [
     'warn',
-    { 
+    {
       varsIgnorePattern: '^_',
       argsIgnorePattern: '^_',
       vars: 'local',
       args: 'none',
       ignoreRestSiblings: true,
-      caughtErrors: 'none'
+      caughtErrors: 'none',
     },
   ],
   'no-underscore-dangle': 'off',
@@ -37,8 +36,9 @@ const rules = {
       selector: 'variable',
       format: null,
       custom: {
-        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+|_[a-z][a-zA-Z0-9]*)$',
-        match: true
+        regex:
+          '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+|_[a-z][a-zA-Z0-9]*)$',
+        match: true,
       },
     },
     {
@@ -46,16 +46,18 @@ const rules = {
       modifiers: ['unused'],
       format: null,
       custom: {
-        regex: '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+|_[a-z][a-zA-Z0-9]*)$',
-        match: true
+        regex:
+          '^(_+|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|[A-Z][A-Z0-9_]+|_[a-z][a-zA-Z0-9]*)$',
+        match: true,
       },
     },
     {
       selector: 'parameter',
       format: null,
       custom: {
-        regex: '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|_[a-z][a-zA-Z0-9]*)$',
-        match: true
+        regex:
+          '^(_+$|_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*|[A-Z][a-zA-Z0-9]*|_[a-z][a-zA-Z0-9]*)$',
+        match: true,
       },
     },
     {
@@ -64,7 +66,7 @@ const rules = {
       format: null,
       custom: {
         regex: '^(_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*)$',
-        match: true
+        match: true,
       },
     },
     {
@@ -73,7 +75,7 @@ const rules = {
       format: null,
       custom: {
         regex: '^(_+[a-z][a-zA-Z0-9]*|[a-z][a-zA-Z0-9]*)$',
-        match: true
+        match: true,
       },
     },
   ],
@@ -150,6 +152,40 @@ const rules = {
   // Node specific rules
   'no-process-exit': 'error',
   'no-console': 'off',
+
+  // New line between multi line blocks
+  'padding-line-between-statements': [
+    'error',
+    {
+      blankLine: 'always',
+      prev: [
+        'multiline-block-like',
+        'multiline-const',
+        'multiline-expression',
+        'multiline-let',
+        'multiline-var',
+        'block-like',
+      ],
+      next: '*',
+    },
+    {
+      blankLine: 'always',
+      prev: '*',
+      next: [
+        'multiline-block-like',
+        'multiline-const',
+        'multiline-expression',
+        'multiline-let',
+        'multiline-var',
+        'block-like',
+      ],
+    },
+    {
+      blankLine: 'any',
+      prev: ['cjs-import', 'import'],
+      next: ['cjs-import', 'import'],
+    },
+  ],
 };
 
 const baseConfig = {
@@ -157,7 +193,6 @@ const baseConfig = {
   plugins: {
     '@typescript-eslint': tsPlugin,
     import: importPlugin,
-    improvin: improvinPlugin,
   },
   languageOptions: {
     parser: tsParser,
