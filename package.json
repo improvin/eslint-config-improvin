@@ -39,7 +39,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "minimatch": "^10.0.1",
     "prettier": "^3.5.3",
-    "typescript": "^5.7"
+    "typescript": "^5.8"
   },
   "devDependencies": {
     "eslint": "^9.20"
