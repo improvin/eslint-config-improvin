@@ -42,6 +42,6 @@
     "typescript": "^5.8"
   },
   "devDependencies": {
-    "eslint": "^9.27"
+    "eslint": "^9.28"
   }
 }
