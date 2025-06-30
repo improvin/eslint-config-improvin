@@ -37,7 +37,7 @@
     "eslint-plugin-prettier": "^5.5.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "minimatch": "^10.0.1",
+    "minimatch": "^10.0.3",
     "prettier": "^3.6.0",
     "typescript": "^5.8"
   },
