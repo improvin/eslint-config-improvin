@@ -14,7 +14,7 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
     },
-    "prettier.configPath": "./eslint-config-improvin/.prettierrc.json",
+    "prettier.configPath": "./.prettierrc.json",
     "prettier.requireConfig": true,
     "files.exclude": {
       "**/.nyc_output": true,
