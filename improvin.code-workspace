@@ -8,13 +8,13 @@
       "eve/",
       "batuu/",
       "the-senate/",
+      "eslint-config-improvin/",
     ],
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
     },
-    "prettier.configPath": "./.prettierrc.json",
     "prettier.requireConfig": true,
     "files.exclude": {
       "**/.nyc_output": true,
