@@ -27,14 +27,14 @@
     "eslint": ">=9"
   },
   "dependencies": {
-    "@eslint/js": "^9.31.0",
     "eslint-config-prettier": "^10.1.8",
+    "@eslint/js": "^9.35.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
-    "@typescript-eslint/parser": "^8.35.0",
+    "@typescript-eslint/parser": "^8.43.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "minimatch": "^10.0.3",
@@ -42,6 +42,6 @@
     "typescript": "^5.8"
   },
   "devDependencies": {
-    "eslint": "^9.31"
+    "eslint": "^9.35"
   }
 }
