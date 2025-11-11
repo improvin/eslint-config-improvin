@@ -6,6 +6,7 @@ const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const importPlugin = require('eslint-plugin-import');
 const prettierConfig = require('eslint-config-prettier');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
+const loggerRulesPlugin = require('./plugins/logger-rules.cjs');
 
 const rules = {
   'no-unused-vars': 'off',
@@ -220,6 +221,7 @@ const rules = {
   'jsx-a11y/role-supports-aria-props': 'error',
   'jsx-a11y/scope': 'error',
   'jsx-a11y/tabindex-no-positive': 'error',
+  'logger-rules/logger-arg-limit': 'error',
 };
 
 const baseConfig = {
@@ -230,6 +232,7 @@ const baseConfig = {
     react: reactPlugin,
     'react-hooks': reactHooksPlugin,
     'jsx-a11y': jsxA11yPlugin,
+    'logger-rules': loggerRulesPlugin,
   },
   languageOptions: {
     parser: tsParser,
