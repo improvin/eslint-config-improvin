@@ -3,6 +3,7 @@ const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 const importPlugin = require('eslint-plugin-import');
 const prettierConfig = require('eslint-config-prettier');
+const loggerRulesPlugin = require('./plugins/logger-rules.cjs');
 
 const rules = {
   'no-unused-vars': 'off',
@@ -152,6 +153,7 @@ const rules = {
   // Node specific rules
   'no-process-exit': 'error',
   'no-console': 'off',
+  'logger-rules/logger-arg-limit': 'error',
 
   // New line between multi line blocks
   'padding-line-between-statements': [
@@ -193,6 +195,7 @@ const baseConfig = {
   plugins: {
     '@typescript-eslint': tsPlugin,
     import: importPlugin,
+    'logger-rules': loggerRulesPlugin,
   },
   languageOptions: {
     parser: tsParser,
