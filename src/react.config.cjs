@@ -24,6 +24,7 @@ const rules = {
   indent: 'off',
   quotes: 'off',
 
+  '@typescript-eslint/no-explicit-any': 'warn',
   '@typescript-eslint/indent': 'off',
   '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
   '@typescript-eslint/no-empty-object-type': 'warn',
