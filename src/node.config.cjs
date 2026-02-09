@@ -8,7 +8,7 @@ const loggerRulesPlugin = require('./plugins/logger-rules.cjs');
 const rules = {
   'no-unused-vars': 'off',
   '@typescript-eslint/no-unused-vars': [
-    'warn',
+    'error',
     {
       varsIgnorePattern: '^_',
       argsIgnorePattern: '^_',
@@ -30,8 +30,8 @@ const rules = {
 
   '@typescript-eslint/no-explicit-any': 'warn',
   '@typescript-eslint/indent': 'off',
-  '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
-  '@typescript-eslint/no-empty-object-type': 'warn',
+  '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+  '@typescript-eslint/no-empty-object-type': 'error',
   '@typescript-eslint/naming-convention': [
     'error',
     {
@@ -81,7 +81,7 @@ const rules = {
       },
     },
   ],
-  '@typescript-eslint/prefer-function-type': 'warn',
+  '@typescript-eslint/prefer-function-type': 'error',
 
   'import/prefer-default-export': 'off',
   'import/no-extraneous-dependencies': [
@@ -107,7 +107,7 @@ const rules = {
 
   'max-params': ['error', 3],
   'max-len': [
-    'warn',
+    'error',
     {
       code: 80,
       comments: 80,
@@ -120,13 +120,13 @@ const rules = {
       ignoreRegExpLiterals: true,
     },
   ],
-  'func-names': ['warn', 'never'],
+  'func-names': ['error', 'never'],
   'prefer-arrow-callback': [
-    'warn',
+    'error',
     { allowNamedFunctions: false, allowUnboundThis: false },
   ],
   'no-restricted-syntax': [
-    'warn',
+    'error',
     {
       selector: 'FunctionDeclaration',
       message:
