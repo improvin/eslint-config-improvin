@@ -153,7 +153,7 @@ const rules = {
 
   // Node specific rules
   'no-process-exit': 'error',
-  'no-console': 'off',
+  'no-console': 'warn',
   'logger-rules/logger-arg-limit': 'error',
 
   // New line between multi line blocks
