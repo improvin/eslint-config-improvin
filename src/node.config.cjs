@@ -25,6 +25,7 @@ const rules = {
   'no-cond-assign': 'off',
   'no-await-in-loop': 'off',
   'no-case-declarations': 'off',
+  curly: ['error', 'all'],
   indent: 'off',
   quotes: 'off',
 
