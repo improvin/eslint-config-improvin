@@ -150,6 +150,27 @@ const rules = {
       message:
         'Inline exports are not allowed. Export separately at the end of the file.',
     },
+    {
+      selector:
+        'CallExpression[callee.type="MemberExpression"][callee.object.type="Identifier"][callee.object.name="RawContract"]:not([callee.property.name="update"]):not([callee.property.name="delete"])',
+      message:
+        'Use lifecycle functions in contractService instead of RawContract.* calls.',
+    },
+  ],
+  'no-restricted-properties': [
+    'error',
+    {
+      object: 'RawContract',
+      property: 'update',
+      message:
+        'RawContract.update is forbidden. Use lifecycle functions in contractService instead.',
+    },
+    {
+      object: 'RawContract',
+      property: 'delete',
+      message:
+        'RawContract.delete is forbidden. Use lifecycle functions in contractService instead.',
+    },
   ],
 
   // Node specific rules
