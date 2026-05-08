@@ -19,7 +19,8 @@
     "src"
   ],
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint . --ignore-pattern 'tests/**'",
+    "test:prettier-enforcement": "node ./scripts/check-prettier-enforcement.mjs"
   },
   "author": "Improvin AB",
   "license": "MIT",

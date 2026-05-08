@@ -5,4 +5,3 @@ module.exports = {
     'logger-arg-limit': loggerArgLimit,
   },
 };
-

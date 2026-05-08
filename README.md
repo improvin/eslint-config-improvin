@@ -2,22 +2,45 @@
 
 ## Welcome to Improvin's eslint config
 
-### Install command
+## Install
 
-`yarn add --dev https://github.com/improvin/eslint-config-improvin.git`
-
-### Install peer dependencioes
-
-`yarn add --dev prettier eslint`
-
-### Add a .eslintrc
-
-```
-{
-  "extends": "eslint-config-improvin"
-}
+```bash
+yarn add --dev eslint-config-improvin eslint
 ```
 
-#### Note
+## Usage
 
-Some editor plugins for `prettier` will attempt to use the `.prettierrc` file in your project and ignore any other forms of configuration. To use the `prettier` rules for this configuration, make sure your editor plugins support `eslint --fix` and do not have an error warning of a missing `.prettierrc` file.
+### Node projects
+
+```js
+import { nodeConfig } from 'eslint-config-improvin';
+
+export default [...nodeConfig];
+```
+
+### React projects
+
+```js
+import { reactConfig } from 'eslint-config-improvin';
+
+export default [...reactConfig];
+```
+
+## Prettier enforcement
+
+Both exported configs include `eslint-plugin-prettier/recommended`.
+That means `yarn lint` fails with `prettier/prettier` errors whenever code
+has drifted from Prettier formatting.
+
+Use ESLint auto-fix to apply formatting fixes:
+
+```bash
+yarn eslint . --fix
+```
+
+## Local verification
+
+```bash
+yarn lint
+yarn test:prettier-enforcement
+```

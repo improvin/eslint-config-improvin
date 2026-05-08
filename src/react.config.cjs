@@ -5,6 +5,7 @@ const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const importPlugin = require('eslint-plugin-import');
 const prettierConfig = require('eslint-config-prettier');
+const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 const loggerRulesPlugin = require('./plugins/logger-rules.cjs');
 
@@ -273,4 +274,9 @@ const baseConfig = {
   rules,
 };
 
-module.exports = [js.configs.recommended, prettierConfig, baseConfig];
+module.exports = [
+  js.configs.recommended,
+  prettierConfig,
+  baseConfig,
+  eslintPluginPrettierRecommended,
+];
