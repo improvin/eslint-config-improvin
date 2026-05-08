@@ -3,6 +3,7 @@ const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 const importPlugin = require('eslint-plugin-import');
 const prettierConfig = require('eslint-config-prettier');
+const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
 const loggerRulesPlugin = require('./plugins/logger-rules.cjs');
 
 const rules = {
@@ -228,4 +229,9 @@ const baseConfig = {
   rules,
 };
 
-module.exports = [js.configs.recommended, prettierConfig, baseConfig];
+module.exports = [
+  js.configs.recommended,
+  prettierConfig,
+  baseConfig,
+  eslintPluginPrettierRecommended,
+];
