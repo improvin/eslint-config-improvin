@@ -24,15 +24,19 @@
   },
   "author": "Improvin AB",
   "license": "MIT",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
   "peerDependencies": {
-    "eslint": ">=9"
+    "eslint": ">=10"
   },
   "dependencies": {
+    "@eslint/compat": "^2.1.0",
     "@eslint/js": "^10.0.1",
-    "eslint-import-resolver-typescript": "^4.4.5",
     "@typescript-eslint/eslint-plugin": "^8.60.1",
     "@typescript-eslint/parser": "^8.61.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.6",
@@ -43,6 +47,6 @@
     "typescript": "^6.0"
   },
   "devDependencies": {
-    "eslint": "9.39.2"
+    "eslint": "^10.5.0"
   }
 }
