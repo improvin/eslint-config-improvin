@@ -25,7 +25,6 @@ const rules = {
   'no-continue': 'off',
   'no-bitwise': 'off',
   'no-cond-assign': 'off',
-  'no-nested-ternary': 'error',
   'no-await-in-loop': 'off',
   'no-case-declarations': 'off',
   curly: ['error', 'all'],
