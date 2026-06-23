@@ -1,3 +1,4 @@
+const { fixupPluginRules } = require('@eslint/compat');
 const js = require('@eslint/js');
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
@@ -198,7 +199,7 @@ const baseConfig = {
   files: ['**/*.js', '**/*.ts'],
   plugins: {
     '@typescript-eslint': tsPlugin,
-    import: importPlugin,
+    import: fixupPluginRules(importPlugin),
     'logger-rules': loggerRulesPlugin,
   },
   languageOptions: {

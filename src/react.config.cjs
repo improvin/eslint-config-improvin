@@ -1,3 +1,4 @@
+const { fixupPluginRules } = require('@eslint/compat');
 const js = require('@eslint/js');
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
@@ -195,7 +196,6 @@ const rules = {
   ],
   'react-hooks/rules-of-hooks': 'error',
   'react-hooks/exhaustive-deps': 'warn',
-  'react/jsx-uses-vars': 'error',
 
   // JSX A11y
   'jsx-a11y/alt-text': 'error',
@@ -232,10 +232,10 @@ const baseConfig = {
   files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
   plugins: {
     '@typescript-eslint': tsPlugin,
-    import: importPlugin,
-    react: reactPlugin,
+    import: fixupPluginRules(importPlugin),
+    react: fixupPluginRules(reactPlugin),
     'react-hooks': reactHooksPlugin,
-    'jsx-a11y': jsxA11yPlugin,
+    'jsx-a11y': fixupPluginRules(jsxA11yPlugin),
     'logger-rules': loggerRulesPlugin,
   },
   languageOptions: {
